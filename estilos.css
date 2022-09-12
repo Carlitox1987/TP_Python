@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 nav{
-    background: #2fcdcd;
+    background: #ac3506;
     height: 80px;
     width: 100%;
 }
@@ -46,7 +46,7 @@ li a.active, li a:hover{
     cursor: pointer;
     display: none;
 }
-#menu_check{
+#check{
     display: none;
 }
 section{
@@ -91,7 +91,7 @@ section{
         color: red;
     }
     #check:checked ~ ul{
-        left:0;
+        left:0%;
     }
 
 }
