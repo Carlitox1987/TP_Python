@@ -1,3 +1,11 @@
+#video-inicio {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 .container {
     display: grid;
     grid-template: 120px 1fr 80px / 70% 1fr;
@@ -8,7 +16,8 @@
     grid-gap: 20px;
     height: 100vh;
     grid-gap: 3%;
-}
+    position: absolute; /*agregue la posicion absoluta para que los items ocupen el frente del viewport*/
+    }
 .Header {
     grid-area: Header;
 }
@@ -22,71 +31,58 @@
     grid-area: Footer;
 }
 .item {
-    background-color: black;
+    background-color: none; /* quite el fondo de los items para ver el video*/
     padding: 10px;
     color: white;
     border-radius: 10px;
 }
 .nav-bar {
-    background-color: rgb(47, 101, 83);
-    border-radius: 5px;
-    }
+    border-radius: 2px;
+    color: red;
+    opacity: 89%;
+    font-family: 'Bungee Spice'
+   }
+.nav-bar:hover {
+    font-size: 30px;
+    background-color: rgb(64, 62, 62);
+    color: rgb(255, 0, 0);
+    border-radius: 10px;;
+    transition-property: unset;
+    transition-duration: 1;
+    transition-timing-function: ease-in-out;
+    opacity: 100%;
+    }    
 .bodystyle {
     background-color: blanchedalmond;
     }
-    h1, h2 {
-        box-align:center;
+h1, h2 {
+        text-align: center;
+        align-content:center;
+        justify-content: center;
         color: red;
-        font-family: 'Courier New', Courier, monospace;
-        background-color: rgb(109, 104, 104);
-            animation-name: cambios;
-            animation-duration: 10s;
-        border-radius: 2px
-        }
+        font-size: 45px;
+        font-family: 'Bungee Spice';
+        animation-name: cambios;
+        animation-duration: 2s;
+        border-radius: 2px;
+    }
         @keyframes cambios {
-            0% {
-                background-color: rgb(93, 10, 10);
-                left: 0px;
-                top: 0px;
-                border-radius: 0%;
-            }
-
-            25% {
-                background-color: salmon;
-                left: 200px;
-                top: 0px;
-                border-radius: 50%;
-            }
-
-            50% {
-                background-color: rgb(77, 77, 156);
-                left: 200px;
-                top: 200px;
-                border-radius: 0%;
-            }
-
-            75% {
+                  75% {
                 background-color: rgb(125, 229, 125);
                 left: 0px;
                 top: 200px;
                 border-radius: 50%;
-            }
-
-            100% {
-                background-color: rgb(181, 70, 70);
-                left: 0px;
-                top: 0px;
-                border-radius: 0%;
-            }
+                }
+           
     }
-    p {
+p {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
-    .form-clas {
-        font-family: 'Courier New', Courier, monospace;
-        background-color: blanchedalmond;
+.form-clas  {
+        font-family: 'Bungee Spice','Courier New', Courier, monospace;
+        position: absolute; 
     }
-    img {
+img {
         border-radius: 20px;
         width: 100%;
         max-width: 850px;
