@@ -49,5 +49,33 @@
     ul {
         list-style: none;
     }
+    /*----------------------------------------------------------------*/
+/* Punto de corte para pantallas tipo tablet                      */
+/*----------------------------------------------------------------*/
+@media only screen and (max-width: 800px) {
+    .container {
+
+        grid-template-rows: Auto auto;
+        grid-template-columns: 1fr 2fr;
     
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "picture summary summary" "details details details"
+        ;
+    }
+}
+
+
+/*----------------------------------------------------------------*/
+/* Punto de corte para pantallas tipo celular                     */
+/*----------------------------------------------------------------*/
+@media only screen and (max-width: 600px) {
+    .container {
+
+        grid-template-rows: Auto Auto Auto;
+        grid-template-columns: Auto;
     
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "picture" "summary" "details"
+        ;
+    }
+}
