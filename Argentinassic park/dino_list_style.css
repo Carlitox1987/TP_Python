@@ -1,0 +1,81 @@
+.container {
+    display: grid;
+
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr 4fr;
+
+    /* Distribuimos el contenido en cada fila */
+    grid-template-areas: "picture summary summary summary" "details details details details"
+    ;
+
+    /* separamos los items con gap */
+   /* gap: 1%;*/
+
+    /* Hacemos que el diseño ocupe casi el alto total del navegador */
+    /* height: 90vh; */
+}
+.picture{
+    grid-area: picture;
+    background-color: rgb(253, 253, 253);
+}
+.summary{
+    font-size: 20px;
+    grid-area: summary;
+    background-color: rgb(247, 250, 135);
+}
+.details{
+    grid-area: details;
+    background-color: #97f5f3;
+}
+.nav-bar {
+    border-radius: 2px;
+    color: red;
+    opacity: 89%;
+    font-family: 'Bungee Spice'
+   }
+.nav-bar:hover {
+    font-size: 30px;
+    background-color: rgb(64, 62, 62);
+    color: rgb(255, 0, 0);
+    border-radius: 10px;;
+    transition-property: unset;
+    transition-duration: 1;
+    transition-timing-function: ease-in-out;
+    opacity: 100%;
+    }  
+    .bodystyle {
+        background-color: blanchedalmond;
+    }
+    ul {
+        list-style: none;
+    }
+    /*----------------------------------------------------------------*/
+/* Punto de corte para pantallas tipo tablet                      */
+/*----------------------------------------------------------------*/
+@media only screen and (max-width: 800px) {
+    .container {
+
+        grid-template-rows: Auto auto;
+        grid-template-columns: 1fr 2fr;
+    
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "picture summary summary" "details details details"
+        ;
+    }
+}
+
+
+/*----------------------------------------------------------------*/
+/* Punto de corte para pantallas tipo celular                     */
+/*----------------------------------------------------------------*/
+@media only screen and (max-width: 600px) {
+    .container {
+
+        grid-template-rows: Auto Auto Auto;
+        grid-template-columns: Auto;
+    
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "picture" "summary" "details"
+        ;
+    }
+}
