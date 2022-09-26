@@ -5,7 +5,7 @@
     grid-template-columns: 1fr 4fr;
 
     /* Distribuimos el contenido en cada fila */
-    grid-template-areas: "picture summary summary summary" "details details details details"
+    grid-template-areas: "picture summary summary summary" "item_details item_details item_details item_details"
     ;
 
     /* separamos los items con gap */
@@ -23,10 +23,26 @@
     grid-area: summary;
     background-color: rgb(247, 250, 135);
 }
-.details{
-    grid-area: details;
-    background-color: #97f5f3;
+.item_details{
+    grid-area: item_details;
 }
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox] + label{
+    background: rgba(0, 255, 110, 0.724);
+}
+input[type=checkbox]~label+p{
+    background: rgb(0, 255, 110);
+    color: black;
+    display: none;
+  }
+input[type=checkbox]:checked~label+p{
+    display: inline-block;
+  }
+  input[type=checkbox]~label{
+    cursor: pointer;
+  }
 .nav-bar {
     border-radius: 2px;
     color: red;
@@ -59,7 +75,7 @@
         grid-template-columns: 1fr 2fr;
     
         /* Distribuimos el contenido en cada fila */
-        grid-template-areas: "picture summary summary" "details details details"
+        grid-template-areas: "picture summary summary" "item_details item_details item_details"
         ;
     }
 }
@@ -75,7 +91,7 @@
         grid-template-columns: Auto;
     
         /* Distribuimos el contenido en cada fila */
-        grid-template-areas: "picture" "summary" "details"
+        grid-template-areas: "picture" "summary" "item_details"
         ;
     }
 }
