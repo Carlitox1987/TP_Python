@@ -27,47 +27,159 @@
     background-color: rgb(247, 250, 135);
 }
 .item_details{
+    color:rgb(0, 0, 0);
     grid-area: item_details;
 }
 input[type=checkbox]{
     display: none;
 }
-input[type=checkbox] + label{
+input[type=checkbox] ~ label{
     background: rgba(0, 255, 110, 0.724);
 }
 label ~ .item_details{
     background: rgb(0, 255, 110);
     color: black;
     display: none;
-  }
+}
 input[type=checkbox]:checked~label ~ .item_details{
     display: inline-block;
-  }
-  input[type=checkbox]~label{
+}
+input[type=checkbox]~label{
     cursor: pointer;
-  }
+}
+
+Body {
+    background: #e9ecf4;
+    color: #000;
+    font-family: 'roboto', sans-serif;
+}
+.contenedor {
+    width: 90%;
+    max-width: 1280px;
+    margin: 10px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas:    "header header header"
+                            "contenido contenido contenido"
+                            "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.contenedor .header {
+    grid-area: header;
+    display: flexbox;
+    flex-wrap: nowrap;
+    text-align: center;
+    flex-grow: center;
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.contenedor .sidebar {
+    grid-column: 3 / 4;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+
+.contenedor .footer {
+    grid-area: footer;
+    display: flexbox;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: centrer;
+    text-align: center;
+}
+
 .nav-bar {
-    border-radius: 2px;
     color: red;
     opacity: 89%;
-    font-family: 'Bungee Spice'
-   }
+    font-family: 'Bungee Spice';
+    display: flex;
+    flex-flow: center;
+    justify-content: center;
+}
+
 .nav-bar:hover {
     font-size: 30px;
-    background-color: rgb(64, 62, 62);
     color: rgb(255, 0, 0);
-    border-radius: 10px;;
     transition-property: unset;
     transition-duration: 1;
     transition-timing-function: ease-in-out;
     opacity: 100%;
-    }  
-    .bodystyle {
-        background-color: blanchedalmond;
+}
+
+.estilocuerpo {
+    background-image: url(media/img/521755-selva-amazonica-extensa-planeta.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 45px;
+    font-family: 'Bungee Spice';
+    animation-name: cambios;
+    animation-duration: .75s;
+}
+
+@keyframes cambios {
+    75% {
+    font-size: 55px;
     }
-    ul {
-        list-style: none;
-    }
+}
+
+h2 {
+    font-size: 33px;
+    font-family: 'Bungee Spice';
+}
+
+h3 {
+    font-size: 23px;
+    font-family: 'Bungee Spice';
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.sociales {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #fff;
+}
+.sociales:hover {
+    font-size: 40px
+}
+
+.form-clas  {
+        font-family: 'Bungee Spice','Courier New', Courier, monospace;
+        position: absolute; 
+}
     /*----------------------------------------------------------------*/
 /* Punto de corte para pantallas tipo tablet                      */
 /*----------------------------------------------------------------*/
