@@ -1,40 +1,62 @@
 .container {
     display: grid;
-
+    
     grid-template-rows: 1fr auto;
-    grid-template-columns: 1fr 3fr 1fr;
-
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-gap: 5px;
     /* Distribuimos el contenido en cada fila */
-    grid-template-areas: "picture summary summary checks_dino" "item_details item_details item_details item_details"
+    grid-template-areas: "picture summary slider checks_dino" "item_details item_details item_details item_details"
     ;
-
-    /* separamos los items con gap */
-   /* gap: 1%;*/
-
-    /* Hacemos que el diseño ocupe casi el alto total del navegador */
-    /* height: 90vh; */
 }
+.slider-container {
+    grid-area: slider;
+    display: flex;
+    overflow-x: scroll;
+  
+    /* Vamos a añadir esto 👇 */
+    scroll-snap-type: x mandatory;
+  }
+  
+  .slider-container img {
+    flex: 0 0 100%;
+    width: 100%;
+    object-fit: cover;
+  
+    /* Vamos a añadir esto 👇 */
+    scroll-snap-align: center;
+  }
 .checks_dino{
     grid-area: checks_dino;
+    border-radius: 25px;
+}
+label{
+    align-items: center;
+    display: grid;
 }
 .picture{
     grid-area: picture;
     background-color: rgb(253, 253, 253);
+    border-radius: 25px;
 }
 .summary{
     font-size: 20px;
     grid-area: summary;
     background-color: rgb(247, 250, 135);
+    border-radius: 25px;
 }
 .item_details{
     color:rgb(0, 0, 0);
     grid-area: item_details;
+    border-radius: 25px;
 }
 input[type=checkbox]{
     display: none;
 }
 input[type=checkbox] ~ label{
     background: rgba(0, 255, 110, 0.724);
+}
+input[type=checkbox] ~ label:hover{
+    font-weight:bold;
 }
 label ~ .item_details{
     background: rgb(0, 255, 110);
@@ -47,6 +69,15 @@ input[type=checkbox]:checked~label ~ .item_details{
 input[type=checkbox]~label{
     cursor: pointer;
 }
+td{
+    border-radius: 25px;
+    text-align: left;
+}
+td:hover {
+    background-color: rgb(216, 239, 11);
+   font-size: 21px;
+    cursor: pointer;  
+  }
 
 Body {
     background: #e9ecf4;
