@@ -8,20 +8,27 @@
     grid-template-areas: "picture summary slider checks_dino" "item_details item_details item_details item_details"
     ;
 }
+img{
+    width: 200px;
+}
 .slider-container {
     grid-area: slider;
     display: flex;
     overflow-x: scroll;
-  
+    align-items: center;
     /* Vamos a añadir esto 👇 */
     scroll-snap-type: x mandatory;
+    background: rgba(255, 255, 255, 0.724);
+    border-radius: 25px;
   }
-  
-  .slider-container img {
-    flex: 0 0 100%;
-    width: 100%;
-    object-fit: cover;
-  
+  img{
+    object-fit: contain;
+    border-radius: 25px;
+  }
+  .slider-container p {
+    color:rgb(0, 0, 0);
+    font-weight:bold;
+    
     /* Vamos a añadir esto 👇 */
     scroll-snap-align: center;
   }
@@ -37,12 +44,15 @@ label{
     grid-area: picture;
     background-color: rgb(253, 253, 253);
     border-radius: 25px;
+    
 }
 .summary{
     font-size: 20px;
     grid-area: summary;
     background-color: rgb(247, 250, 135);
     border-radius: 25px;
+    padding-left: 15px;
+    padding-top: 30px;
 }
 .item_details{
     color:rgb(0, 0, 0);
@@ -57,6 +67,7 @@ input[type=checkbox] ~ label{
 }
 input[type=checkbox] ~ label:hover{
     font-weight:bold;
+    background: rgba(0, 255, 110, 0.9);
 }
 label ~ .item_details{
     background: rgb(0, 255, 110);
@@ -76,7 +87,6 @@ td{
 td:hover {
     background-color: rgb(216, 239, 11);
    font-size: 21px;
-    cursor: pointer;  
   }
 
 Body {
@@ -224,6 +234,9 @@ p {
         grid-template-areas: "picture summary checks_dino" "item_details item_details item_details"
         ;
     }
+    .slider-container {
+        display: none;
+    }
 }
 
 
@@ -239,5 +252,8 @@ p {
         /* Distribuimos el contenido en cada fila */
         grid-template-areas: "picture" "summary" "checks_dino" "item_details"
         ;
+    }
+    .slider-container {
+        display: none;
     }
 }
