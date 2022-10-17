@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="icon" href="img/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="contacto_style.css">
+    <link rel="icon" href="media/img/favicon_io/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
-    <title>Contacto</title>
+    <script src="https://kit.fontawesome.com/5cd134d4e9.js" crossorigin="anonymous"></script>
+    <script type = "text/javascript" src="contacto.js"></script>  
+    <title>Dinosaurios Argentina</title>
 </head>
-<body>
-        <Form class="form-clas">
-        Nombre <input type="text" name="Nombre"> <br>
-        Apellido <input type="text" name="Apellido"> <br>
-        Fecha de Nac. <Input type="date" name="date"> <br>
-        E-mail <input type="email"><br>
-        Consulta: <textarea name="Consulta" rows="10" cols="40">Escribe aqui tu consulta...</textarea><br>
-        <input type="button" value="Enviar">
-        <input type="button" value="Borrar">
-    </Form>
-    <div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <a class="form-clas" href="index.html">Volver a inicio</a>
+
+<body class="estilocuerpo">
+    <div class="contenedor">
+        <header class="header">
+            <h1>Argentinassic Park</h1>
+            <div>
+                <nav>
+                    <a class="nav-bar" href="index.html">Inicio</a>
+                    <a class="nav-bar" href="dino_list.html">Dinos</a>
+                    <a class="nav-bar" href="Nosotros.html">Nosotros</a>
+                    <a class="nav-bar" href="Contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </header>
+        <main class="contenido">
+            <Form class="form-class">
+                <label>Nombre</label> <input type="text" id="Nombre"> <br>
+                <label>Apellido</label> <input type="text" id="Apellido"> <br>
+                <label>Fecha de Nac.</label> <Input type="date" id="Fecha"> <br>
+                <label>E-mail</label> <input type="email" id="Email"><br>
+                <label>Consulta:</label> <textarea name="Consulta" rows="10" cols="40" id="Consulta">Escribe aqui tu consulta...</textarea><br>
+                <input type="button" onclick="enviar()" value="Enviar">
+                <input type="button" onclick="borrar()"value="Borrar">
+            </Form>
+            <div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <a class="form-clas" href="index.html">Volver a inicio</a>
+            </div>
+        </main>
+        <footer class="footer">
+            <h3>Seguinos en nuestras redes</h3>
+            <div class="sociales">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+
+            </div>
+        </footer>
     </div>
 </body>
+
 </html>

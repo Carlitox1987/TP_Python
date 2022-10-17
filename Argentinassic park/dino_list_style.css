@@ -1,54 +1,226 @@
 .container {
     display: grid;
-
+    
     grid-template-rows: 1fr auto;
-    grid-template-columns: 1fr 4fr;
-
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-gap: 5px;
     /* Distribuimos el contenido en cada fila */
-    grid-template-areas: "picture summary summary summary" "details details details details"
+    grid-template-areas: "picture summary slider checks_dino" "item_details item_details item_details item_details"
     ;
-
-    /* separamos los items con gap */
-   /* gap: 1%;*/
-
-    /* Hacemos que el diseño ocupe casi el alto total del navegador */
-    /* height: 90vh; */
+}
+img{
+    width: 200px;
+}
+.slider-container {
+    grid-area: slider;
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    /* Vamos a añadir esto 👇 */
+    scroll-snap-type: x mandatory;
+    background: rgba(255, 255, 255, 0.724);
+    border-radius: 25px;
+  }
+  img{
+    object-fit: contain;
+    border-radius: 25px;
+  }
+  .slider-container p {
+    color:rgb(0, 0, 0);
+    font-weight:bold;
+    
+    /* Vamos a añadir esto 👇 */
+    scroll-snap-align: center;
+  }
+.checks_dino{
+    grid-area: checks_dino;
+    border-radius: 25px;
+}
+label{
+    align-items: center;
+    display: grid;
 }
 .picture{
     grid-area: picture;
     background-color: rgb(253, 253, 253);
+    border-radius: 25px;
+    
 }
 .summary{
     font-size: 20px;
     grid-area: summary;
     background-color: rgb(247, 250, 135);
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-top: 30px;
 }
-.details{
-    grid-area: details;
-    background-color: #97f5f3;
+.item_details{
+    color:rgb(0, 0, 0);
+    grid-area: item_details;
+    border-radius: 25px;
 }
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox] ~ label{
+    background: rgba(0, 255, 110, 0.724);
+}
+input[type=checkbox] ~ label:hover{
+    font-weight:bold;
+    background: rgba(0, 255, 110, 0.9);
+}
+label ~ .item_details{
+    background: rgb(0, 255, 110);
+    color: black;
+    display: none;
+}
+input[type=checkbox]:checked~label ~ .item_details{
+    display: inline-block;
+}
+input[type=checkbox]~label{
+    cursor: pointer;
+}
+td{
+    border-radius: 25px;
+    text-align: left;
+}
+td:hover {
+    background-color: rgb(216, 239, 11);
+   font-size: 21px;
+  }
+
+Body {
+    background: #e9ecf4;
+    color: #000;
+    font-family: 'roboto', sans-serif;
+}
+.contenedor {
+    width: 90%;
+    max-width: 1280px;
+    margin: 10px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas:    "header header header"
+                            "contenido contenido contenido"
+                            "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.contenedor .header {
+    grid-area: header;
+    display: flexbox;
+    flex-wrap: nowrap;
+    text-align: center;
+    flex-grow: center;
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.contenedor .sidebar {
+    grid-column: 3 / 4;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+
+.contenedor .footer {
+    grid-area: footer;
+    display: flexbox;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: centrer;
+    text-align: center;
+}
+
 .nav-bar {
-    border-radius: 2px;
     color: red;
     opacity: 89%;
-    font-family: 'Bungee Spice'
-   }
+    font-family: 'Bungee Spice';
+    display: flex;
+    flex-flow: center;
+    justify-content: center;
+}
+
 .nav-bar:hover {
     font-size: 30px;
-    background-color: rgb(64, 62, 62);
     color: rgb(255, 0, 0);
-    border-radius: 10px;;
     transition-property: unset;
     transition-duration: 1;
     transition-timing-function: ease-in-out;
     opacity: 100%;
-    }  
-    .bodystyle {
-        background-color: blanchedalmond;
+}
+
+.estilocuerpo {
+    background-image: url(media/img/521755-selva-amazonica-extensa-planeta.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 45px;
+    font-family: 'Bungee Spice';
+    animation-name: cambios;
+    animation-duration: .75s;
+}
+
+@keyframes cambios {
+    75% {
+    font-size: 55px;
     }
-    ul {
-        list-style: none;
-    }
+}
+
+h2 {
+    font-size: 33px;
+    font-family: 'Bungee Spice';
+}
+
+h3 {
+    font-size: 23px;
+    font-family: 'Bungee Spice';
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.sociales {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #fff;
+}
+.sociales:hover {
+    font-size: 40px
+}
+
+.form-clas  {
+        font-family: 'Bungee Spice','Courier New', Courier, monospace;
+        position: absolute; 
+}
     /*----------------------------------------------------------------*/
 /* Punto de corte para pantallas tipo tablet                      */
 /*----------------------------------------------------------------*/
@@ -56,11 +228,14 @@
     .container {
 
         grid-template-rows: Auto auto;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1f 1fr;
     
         /* Distribuimos el contenido en cada fila */
-        grid-template-areas: "picture summary summary" "details details details"
+        grid-template-areas: "picture summary checks_dino" "item_details item_details item_details"
         ;
+    }
+    .slider-container {
+        display: none;
     }
 }
 
@@ -71,11 +246,14 @@
 @media only screen and (max-width: 600px) {
     .container {
 
-        grid-template-rows: Auto Auto Auto;
+        grid-template-rows: Auto Auto Auto Auto;
         grid-template-columns: Auto;
     
         /* Distribuimos el contenido en cada fila */
-        grid-template-areas: "picture" "summary" "details"
+        grid-template-areas: "picture" "summary" "checks_dino" "item_details"
         ;
+    }
+    .slider-container {
+        display: none;
     }
 }
