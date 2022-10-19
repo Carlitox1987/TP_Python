@@ -1,23 +1,32 @@
+.porta_logo{
+    display: flex;
+    justify-content: center;
+}
 .logo {
+
     width: 300px;
     height: 250px;
     background-image: url("./img/logo.png");
     background-size: cover;
 }
-h4{
+
+h4 {
     font-size: 20px;
     text-align: center;
 }
+.box{
+    display: flex;
+    justify-content: center;
+}
 .logo:hover {
-    color: blue;
-    float: left;
     animation-name: test;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-fill-mode: none;
-    background-size: auto;
+    background-size: cover;
 }
+
 @keyframes test {
     0% {
         background-image: url("./img/logo.png");
@@ -35,6 +44,18 @@ h4{
     }
 }
 
+.integrantes {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.integrantes_img {
+    width: 300px;
+    height: 250px;
+}
 
 .contenedor {
     width: 90%;
@@ -45,13 +66,13 @@ h4{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
 
-    grid-template-areas:    "header header header"
-                            ". contenido ."
-                            "widget-1 widget-2 sidebar"
-                            "footer footer footer";
+    grid-template-areas: "header header header"
+        "contenido contenido contenido"
+        "widget-1 widget-2 sidebar"
+        "footer footer footer";
 }
 
-.contenedor > div,
+.contenedor>div,
 .contenedor .header,
 .contenedor .contenido,
 .contenedor .sidebar,
@@ -59,6 +80,7 @@ h4{
     padding: 10px;
     border-radius: 8px;
 }
+
 .contenedor .header {
     color: #fff;
     grid-area: header;
@@ -74,6 +96,7 @@ h4{
     flex-direction: column;
     color: #fff;
 }
+
 .contenedor .sidebar {
     grid-column: 3 / 4;
     border-radius: 8px;
@@ -85,7 +108,7 @@ h4{
     grid-area: sidebar;
 }
 
-.contenedor .widget-1, 
+.contenedor .widget-1,
 .contenedor .widget-2 {
     background: #3363e8;
     color: #fff;
@@ -97,9 +120,11 @@ h4{
     justify-content: center;
     border-radius: 25%;
 }
+
 .contenedor .widget-1 {
     grid-area: widget-1;
 }
+
 .contenedor .widget-2 {
     grid-area: widget-2;
 }
@@ -146,13 +171,14 @@ h1 {
     animation-name: cambios;
     animation-duration: .75s;
 }
+
 label {
     font-family: 'Bungee Spice';
 }
 
 @keyframes cambios {
     75% {
-    font-size: 55px;
+        font-size: 55px;
     }
 }
 
@@ -177,28 +203,29 @@ p {
     font-size: 30px;
     color: #fff;
 }
+
 .sociales:hover {
     font-size: 40px
 }
 
-.form-clas  {
-        font-family: 'Bungee Spice','Courier New', Courier, monospace;
-        position: absolute; 
+.form-clas {
+    font-family: 'Bungee Spice', 'Courier New', Courier, monospace;
+    position: absolute;
 }
 
 img {
-        border-radius: 20px;
-        width: 100%;
-        max-width: 850px;
-        align-items: center;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 850px;
+    align-items: center;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .contenedor {
         grid-template-areas: "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "widget-1 widget-1 widget-2"
-        "footer footer footer";
+            "contenido contenido contenido"
+            "sidebar sidebar sidebar"
+            "widget-1 widget-1 widget-2"
+            "footer footer footer";
     }
 }
