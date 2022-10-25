@@ -6,6 +6,12 @@
 .Provincia_iframe{
     display: none;
 }
+#clima{
+    color: aqua;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 5px;
+}
 Body {
     background: #e9ecf4;
     color: #000;
