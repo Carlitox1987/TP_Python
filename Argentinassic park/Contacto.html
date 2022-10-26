@@ -29,11 +29,11 @@
         </header>
         <main class="contenido">
             <Form class="form-class">
-                <label>Nombre</label> <input type="text" id="Nombre"> <br>
-                <label>Apellido</label> <input type="text" id="Apellido"> <br>
+                <label>Nombre</label> <input type="text" id="Nombre"><p id="nombreStatus"></p> <br>
+                <label>Apellido</label> <input type="text" id="Apellido"><p id="apellidoStatus"></p> <br>
                 <label>Fecha de Nac.</label> <Input type="date" id="Fecha"> <br>
-                <label>E-mail</label> <input type="email" id="Email"><br>
-                <label>Consulta:</label> <textarea name="Consulta" rows="10" cols="40" id="Consulta">Escribe aqui tu consulta...</textarea><br>
+                <label>E-mail</label> <input type="email" id="Email"><p id="emailStatus"></p><br>
+                <label>Consulta:</label> <textarea name="Consulta" rows="10" cols="40" id="Consulta" placeholder="Escribe aqui tu consulta..."></textarea><p id="consultaStatus"></p><br>
                 <input type="button" onclick="enviar()" value="Enviar">
                 <input type="button" onclick="borrar()"value="Borrar">
             </Form>

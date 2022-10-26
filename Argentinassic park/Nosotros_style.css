@@ -84,10 +84,8 @@ h4 {
 .contenedor .header {
     color: #fff;
     grid-area: header;
-    display: flexbox;
     flex-wrap: nowrap;
     text-align: center;
-    flex-grow: center;
 }
 
 .contenedor .contenido {
@@ -131,10 +129,9 @@ h4 {
 
 .contenedor .footer {
     grid-area: footer;
-    display: flexbox;
     flex-direction: row;
     justify-content: space-between;
-    align-items: centrer;
+    align-items: center;
     text-align: center;
 }
 
@@ -144,7 +141,6 @@ h4 {
     opacity: 89%;
     font-family: 'Bungee Spice';
     display: flex;
-    flex-flow: center;
     justify-content: center;
 }
 
@@ -152,7 +148,7 @@ h4 {
     font-size: 30px;
     color: rgb(255, 0, 0);
     transition-property: unset;
-    transition-duration: 1;
+    transition-duration: 1s;
     transition-timing-function: ease-in-out;
     opacity: 100%;
 }
