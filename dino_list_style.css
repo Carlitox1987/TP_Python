@@ -119,10 +119,8 @@ Body {
 
 .contenedor .header {
     grid-area: header;
-    display: flexbox;
     flex-wrap: nowrap;
     text-align: center;
-    flex-grow: center;
 }
 
 .contenedor .contenido {
@@ -146,10 +144,9 @@ Body {
 
 .contenedor .footer {
     grid-area: footer;
-    display: flexbox;
     flex-direction: row;
     justify-content: space-between;
-    align-items: centrer;
+    align-items: center;
     text-align: center;
 }
 
@@ -158,7 +155,6 @@ Body {
     opacity: 89%;
     font-family: 'Bungee Spice';
     display: flex;
-    flex-flow: center;
     justify-content: center;
 }
 
@@ -166,7 +162,7 @@ Body {
     font-size: 30px;
     color: rgb(255, 0, 0);
     transition-property: unset;
-    transition-duration: 1;
+    transition-duration: 1s;
     transition-timing-function: ease-in-out;
     opacity: 100%;
 }
@@ -228,7 +224,7 @@ p {
     .container {
 
         grid-template-rows: Auto auto;
-        grid-template-columns: 1fr 1f 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     
         /* Distribuimos el contenido en cada fila */
         grid-template-areas: "picture summary checks_dino" "item_details item_details item_details"
