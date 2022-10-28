@@ -31,7 +31,22 @@ function getProv(){
         document.getElementById("descripcion").innerHTML  = "El Parque Provincial de Ischigualasto​ o Valle de la Luna, está situado en Argentina, en el noreste de la provincia de San Juan y limita con la provincia de La Rioja al norte. Se encuentra a 324 km de la ciudad de San Juan​ por carretera y a 124 km del departamento Valle Fértil​ (también conocido como Villa San Agustín del Valle Fértil). Su altitud respecto al nivel del mar varía entre los 1200 hasta los 1800 metros en las cumbres de mayor altura. Es un área protegida de 275 369 ha y célebre a nivel científico, ya que resguarda una importante reserva paleontológica. Es el único lugar del mundo donde puede verse totalmente al descubierto y perfectamente diferenciado todo el período triásico en forma completa y ordenada. Se calcula que las formaciones geológicas de este sitio tienen una antigüedad de entre 200 y 250 millones de años, característica que comparte con el parque nacional Talampaya, con el que limita al oeste por estar situado en la provincia de La Rioja. ";
         getWeather('-30.635766951676885','-69.03454558360303');
     }
-
+    else if(provincia_item.options[provincia_item.selectedIndex].text==="Neuquen"){
+        document.getElementById("descripcion").innerHTML  = "En Neuquen, sobre la zona del río China Muerta y a lo largo de la ruta 40, se han colectado dinosaurios de la parte inferior del Cretacico, como los restos de los formidables saurópodos espinosos Amargasaurus y Agustinia y el minúsculo carnívoro Ligabueino, mas pequeño que un pollo.";
+        getWeather('-39.62136823517368', '-70.03936708162799');
+    }
+    else if(provincia_item.options[provincia_item.selectedIndex].text==="Colon"){
+        document.getElementById("descripcion").innerHTML  = "En Entre Rios, se pueden encontrar fosiles del período Cretásico Superior, el último período del reinado de los dinosaurios. De allí provienen restos del saurópodo Argyrosaurus, y sus huevos, un carnívoro del tamaño de un tiranosaurio, y un ankylosaurio acorazado.";
+        getWeather('-32.19668953413643','-58.14072646209389');
+    }
+    else if(provincia_item.options[provincia_item.selectedIndex].text==="San Luis"){
+        document.getElementById("descripcion").innerHTML  = "En San Luis, se han podido encontrar en Sierra de las Quijadas fosiles de reptiles voladores de hace 120 millones de años, como el Pterodaustro guinazui.";
+        getWeather('-32.498852272472845', '-67.01192659374864');
+    }
+    else if(provincia_item.options[provincia_item.selectedIndex].text==="Santa Cruz"){
+        document.getElementById("descripcion").innerHTML  = "En Santa Cruz podemos encontrar el Parque Nacional Bosques Petrificados de Jaramillo. En él se puede apreciar como era la naturaleza hace 150 millones de años: plantas que vivian en una patagonia diferente, mas calida y humeda, araucarias, helechos, cicas y benetitales,  se preservan en el tiempo gracias a que se encuentran petrificadas para enseñarnos como era nuestro país antes de que siquiera el primer humano caminase sobre el mundo.";
+        getWeather('-32.498852272472845', '-67.01192659374864');
+    }
 }
 
 function getWeather(lat,long)
